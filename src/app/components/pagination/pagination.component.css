@@ -1,0 +1,10 @@
+.pagination{
+  display: flex;
+  margin-top: 52px;
+}
+.pagination__num{
+  margin: 0 18px;
+}
+.pagination__arrow{
+  cursor: pointer;
+}

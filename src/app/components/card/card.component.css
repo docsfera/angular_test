@@ -1,0 +1,35 @@
+.card{
+  padding-top: 40px;
+}
+.card__item{
+  display: flex;
+  margin-bottom: 29px;
+}
+.card__name{
+  font-size: 20px;
+  margin-right: 19px;
+}
+.card__arrow{
+  cursor: pointer;
+}
+.card__info{
+  display: flex;
+  padding-bottom: 29px;
+  border-bottom: 1px solid #A5A5A5;
+}
+.info__item{
+  display: flex;
+  width: 450px;
+}
+.info__type{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin-right: 104px;
+}
+.info__name{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2962FF;
+}

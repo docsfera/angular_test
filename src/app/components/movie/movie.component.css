@@ -1,0 +1,61 @@
+.card-page{
+  padding-top: 48px;
+  width: 700px;
+  height: 100vh;
+}
+.back{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: none;
+  color: #2962FF;
+
+  margin-bottom: 22px;
+}
+.back:before{
+  display: inline-block;
+  content: " ";
+  width: 14px;
+  height: 10px;
+  background: url('/assets/forward-left.svg') 0 0 no-repeat;
+
+  margin-right: 5px;
+}
+.card__title{
+  font-size: 28px;
+  line-height: 33px;
+  margin-bottom: 53px;
+}
+.card__fields{
+  display: flex;
+  flex-wrap: wrap;
+}
+.field__item{
+  display: flex;
+  width: 50%;
+  margin-bottom: 40px;
+}
+/*.field__item:nth-child(2n){*/
+/*  justify-content: end;*/
+/*}*/
+.mission__title{
+  margin-bottom: 22px;
+}
+.mission__desc{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  color: #2962FF;
+}
+.info__type{
+  width: 160px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.info__name{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2962FF;
+}

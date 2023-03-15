@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+body{
+  padding-left: 63px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  line-height: 23px;
+  color: rgba(0, 0, 0, 0.87);
+  max-width: 1920px;
+  margin: 0 auto;
+  /*margin: 0 auto;min-width: 1920px;*/
+  display: flex;
+}
+p{
+  margin: 0;
+}

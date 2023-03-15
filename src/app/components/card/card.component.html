@@ -1,0 +1,21 @@
+<div class="card" *ngIf="pageController()">
+  <div class="card__item">
+    <p class="card__name">{{anime.title.romaji}}</p>
+    <img class="card__arrow" src="/assets/forward.svg" (click)="goToMovie(anime.id)"/>
+  </div>
+  <div class="card__info">
+    <div class="info__item">
+      <p class="info__type">Формат</p>
+      <p class="info__name">{{anime.format}}</p>
+    </div>
+    <div class="info__item">
+      <p class="info__type">Сезон</p>
+      <p class="info__name">{{anime.season}}</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+

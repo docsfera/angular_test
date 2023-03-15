@@ -1,10 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="card-page">
+  <a class="back" routerLink="/">Вернуться</a>
+  <div *ngIf="!getIsLoading()">
+    <h2 class="card__title">{{media.title.romaji}}</h2>
+    <div class="card__fields">
+      <div class="field__item">
+        <p class="info__type">Сезон</p>
+        <p class="info__name">{{getInfoCard(media.season)}}</p>
+      </div>
+      <div class="field__item">
+        <p class="info__type">Тип</p>
+        <p class="info__name">{{getInfoCard(media.type)}}</p>
+      </div>
+      <div class="field__item">
+        <p class="info__type">Статус</p>
+        <p class="info__name">{{getInfoCard(media.status)}}</p>
+      </div>
+      <div class="field__item">
+        <p class="info__type">Формат</p>
+        <p class="info__name">{{getInfoCard(media.format)}}</p>
+      </div>
+    </div>
+    <div class="mission">
+      <p class="mission__title info__type">Теги:</p>
+      <p class="mission__desc">{{getTags()}}</p>
+    </div>
+  </div>
+  <h2 class="title" *ngIf="getIsLoading()">Загрузка...</h2>
+</div>

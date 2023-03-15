@@ -1,0 +1,130 @@
+<div class="app">
+  <div class="main">
+    <p class="header">AnimeGo</p>
+    <div class="cards" *ngIf="data.Page.media
+        | filterMedias: mainService.getSearchString()
+        | filterSeasons: mainService.getSeason()
+        | filterFormats: mainService.getFormats() as medias">
+      <app-card
+        *ngFor="let anime of medias, let i = index"
+        [anime] = "anime"
+        [countMedias] = "i"
+        [currentPage]="mainService.getCurrentPage()"
+        [lastPage] = "setCountMedias(medias.length - 1)"
+      ></app-card>
+      <div class="noData" *ngIf="!medias.length && !isLoading">
+        Not Found
+      </div>
+      <div class="noData" *ngIf="isLoading">Загрузка...</div>
+      <app-pagination
+        *ngIf="medias.length"
+        [countMedias]="medias.length"
+      ></app-pagination>
+    </div>
+  </div>
+
+  <div class="filters">
+    <p class="filters__title">Фильтры</p>
+    <div class="filters__field filters__field-name">
+      <input
+        class="filters__input"
+        placeholder=" "
+        [value]="mainService.getSearchString()"
+        (keyup)="onKey($event)"
+      />
+      <label class="filters__label">Название</label>
+    </div>
+    <div class="filters__field filters__field-format">
+      <input
+        class="filters__input"
+        placeholder=" "
+        (click)="clicked = !clicked"
+        [value]="getFormatValue()"
+        readonly
+      />
+      <label class="filters__label">Формат</label>
+      <div class="filters__formats" *ngIf="clicked" >
+        <div class="format__item">
+          <input
+            class="format__input"
+            type="checkbox"
+            (change)="mainService.changeFormats('TV')"
+            [checked]="isFormatSelected('TV')"
+          />
+          <p class="format__name">TV</p>
+        </div>
+        <div class="format__item">
+          <input
+            class="format__input"
+            type="checkbox"
+            (click)="mainService.changeFormats('MOVIE')"
+            [checked]="isFormatSelected('MOVIE')"
+          />
+          <p class="format_name">MOVIE</p>
+        </div>
+        <div class="format__item">
+          <input
+            class="format__input"
+            type="checkbox"
+            (click)="mainService.changeFormats('OVA')"
+            [checked]="isFormatSelected('OVA')"
+          />
+          <p class="format__name">OVA</p>
+        </div>
+      </div>
+    </div>
+    <div class="filter__type">
+      <p>Тип</p>
+      <div class="form_radio">
+        <input
+          type="radio"
+          id="SPRING"
+
+          value="SPRING"
+          name="drone"
+          (change)="seasonsChange('SPRING')"
+          [checked]="isSeasonSelected('SPRING')">
+        <label class="type__name" for="SPRING">SPRING</label>
+      </div>
+
+      <div class="form_radio">
+        <input
+          type="radio"
+          id="SUMMER"
+          class="type__input"
+          value="SUMMER"
+          name="drone"
+          (change)="seasonsChange('SUMMER')"
+          [checked]="isSeasonSelected('SUMMER')"
+        >
+        <label class="type__name" for="SUMMER">SUMMER</label>
+      </div>
+
+      <div class="form_radio">
+        <input
+          type="radio"
+          id="FALL"
+          class="type__input"
+          value="FALL"
+          name="drone"
+          (change)="seasonsChange('FALL')"
+          [checked]="isSeasonSelected('FALL')"
+        >
+        <label class="type__name" for="FALL">FALL</label>
+      </div>
+
+      <div class="form_radio">
+        <input
+          type="radio"
+          id="WINTER"
+          class="type__input"
+          name="drone"
+          value="WINTER"
+          (change)="seasonsChange('WINTER')"
+          [checked]="isSeasonSelected('WINTER')"
+        >
+        <label class="type__name" for="WINTER">WINTER</label>
+      </div>
+    </div>
+  </div>
+</div>

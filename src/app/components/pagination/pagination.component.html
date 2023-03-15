@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{{setArrowColor()}}
+<div class="pagination" >
+  <img class="pagination__arrow"
+       [src]="isPrev ? '/assets/arrow-prev-true.svg' : '/assets/arrow-prev-false.svg'"
+       (click)="prev()"/>
+  <p class="pagination__num">{{mainService.getCurrentPage()}}</p>
+  <img class="pagination__arrow"
+       [src]="isNext ? '/assets/arrow-next-true.svg' : '/assets/arrow-next-false.svg'"
+       (click)="next()"/>
+</div>

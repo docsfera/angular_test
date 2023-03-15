@@ -1,23 +1,17 @@
 import {Pipe, PipeTransform} from "@angular/core"
-import {Media} from "../models/Media";
+import {Media} from "../models/Media"
+import {Season} from "../models/Season"
 
 @Pipe({
-  name: "filterTypes"
+  name: "filterSeasons"
 })
 
-export class FilterTypesPipe implements PipeTransform {
-
-  transform(medias: Media[], type: string): Media[] {
-    if(medias.length && search){
-      console.log(medias, search)
-      console.log(medias.filter(p =>
-        p.title.english && p.title.english.toLowerCase().includes(search.toLowerCase())))
-      return medias.filter(p =>
-        p.title.english && p.title.english.toLowerCase().includes(search.toLowerCase()))
+export class FilterSeasonsPipe implements PipeTransform {
+  transform(medias: Media[], season: Season): Media[] {
+    if(medias.length && season){
+      return medias.filter(p => p.season === season)
     }else{
       return medias
     }
-
   }
-
 }
